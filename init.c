@@ -1182,6 +1182,7 @@ static int __init ath9k_init(void)
 	int error;
 
 	error = ath_pci_init();
+	pr_info_f("enter");
 	if (error < 0) {
 		pr_err("No PCI devices found, driver not installed\n");
 		error = -ENODEV;
@@ -1195,7 +1196,7 @@ static int __init ath9k_init(void)
 	}
 
 	dmi_check_system(ath9k_quirks);
-
+    pr_info_f("exit successfully");
 	return 0;
 
  err_pci_exit:
