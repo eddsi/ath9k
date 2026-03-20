@@ -892,7 +892,7 @@ static int ath_pci_probe(struct pci_dev *pdev, const struct pci_device_id *id)
 	int ret = 0;
 	char hw_name[64];
 	int msi_enabled = 0;
-
+	pr_info_f("enter");
 	if (pcim_enable_device(pdev))
 		return -EIO;
 
@@ -990,7 +990,7 @@ static int ath_pci_probe(struct pci_dev *pdev, const struct pci_device_id *id)
 	ath9k_hw_name(sc->sc_ah, hw_name, sizeof(hw_name));
 	wiphy_info(hw->wiphy, "%s mem=0x%p, irq=%d\n",
 		   hw_name, sc->mem, pdev->irq);
-
+	pr_info_f("exit successfully");
 	return 0;
 
 err_init:
